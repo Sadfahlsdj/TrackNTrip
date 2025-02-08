@@ -9,9 +9,6 @@ const Header = () => {
         <nav>
           <ul className="flex space-x-4">
             <li>
-              <Link to="/" className="text-white transition duration-300">Home</Link>
-            </li>
-            <li>
               <Link to="/map" className="text-white transition duration-300">Map</Link>
             </li>
             <li>

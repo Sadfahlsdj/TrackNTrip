@@ -10,15 +10,16 @@ const useLandmark = (city, landmark) => {
       }
 
       const text = await response.text();
-      console.log('Raw Response:', text);
 
       try {
         const parsedData = JSON.parse(text);
         if (typeof parsedData === 'string') {
           console.log('Double-stringified detected! Parsing again...');
-          return JSON.parse(parsedData);
+          let data = JSON.parse(parsedData);
+          console.log(data)
+          return data;
         }
-        return parsedData;s
+        return parsedData;
       } catch (error) {
         console.error('JSON Parsing Error:', error);
         return [];

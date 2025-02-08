@@ -1,9 +1,8 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS
 import pandas as pd
 
 app = Flask(__name__)
-CORS(app)
+# CORS(app)
 
 @app.get('/info')
 def get_info():
@@ -24,3 +23,23 @@ def get_info():
     out = df[df['name'] == landmark][['Date', 'Description', 'lat_lon', 'address']]
 
     return out.to_json(orient='records')
+
+@app.get('/keyword')
+def get_landmark_by_keyword():
+    """
+    api arguments:
+        city - city name (only supports boston right now)
+        keyword - keyword to search
+
+    :return: name of every landmark which contains the keyword in its description
+    sample usage: http://127.0.0.1:5000/interest?city=boston&keyword=church
+    """
+    keyword = request.args.get('keyword').lower()
+    city = request.args.get('city').lower()
+
+    path = f'landmarks_data/landmarks_{city}_cleaned.csv'
+    df = pd.read_csv(path)
+
+    out = df[df['Description'].str.contains(keyword, case=False)]['name']
+    return out.to_json(orient='records')
+

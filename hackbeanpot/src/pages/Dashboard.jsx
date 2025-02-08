@@ -1,4 +1,4 @@
-// src/pages/Dashboard.jsx
+
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend } from 'recharts';
@@ -14,7 +14,6 @@ const Dashboard = () => {
   const [badges, setBadges] = useState([]);
   const [streaks, setStreaks] = useState({ current: 0, longest: 0 });
 
-  // Sample data for emissions breakdown and emissions over time
   const emissionsData = [
     { name: 'Car', value: 400 },
     { name: 'Bus', value: 300 },
@@ -30,16 +29,31 @@ const Dashboard = () => {
     { month: 'May', emissions: 350 },
   ];
 
-  // Simulate fetching data
   useEffect(() => {
     const fetchData = () => {
-      setTotalEmissions(1200); // Example total emissions
-      setAverageEmissions(300); // Example average emissions
-      setTripCount(4); // Example trip count
-      setBadges([
-        { name: 'Eco Warrior', description: 'Reduced emissions by 20%', icon: '🌳' },
-        { name: 'Frequent Traveler', description: 'Completed 10 trips', icon: '🚗' },
-      ]);
+      const totalEmissions = 200;
+      const averageEmissions = 100;
+      const tripCount = 6;
+
+      setTotalEmissions(totalEmissions);
+      setAverageEmissions(averageEmissions);
+      setTripCount(tripCount);
+
+      const earnedBadges = [];
+
+      if (totalEmissions <= 1000) {
+        earnedBadges.push({ name: 'Eco Warrior', description: 'Kept total emissions below 1000 kg CO2', icon: '🌍' });
+      }
+
+      if (averageEmissions <= 250) {
+        earnedBadges.push({ name: 'Efficient Traveler', description: 'Maintained average emissions below 250 kg CO2 per trip', icon: '🚴' });
+      }
+
+      if (tripCount >= 5) {
+        earnedBadges.push({ name: 'Frequent Traveler', description: 'Completed 5 or more trips', icon: '✈️' });
+      }
+
+      setBadges(earnedBadges);
       setStreaks({ current: 5, longest: 10 });
     };
 
@@ -49,10 +63,9 @@ const Dashboard = () => {
   return (
     <>
       <Header />
-      <div className="p-4 w-full">
+      <div className="px-10 py-6 w-full">
         <h2 className="py-5 text-5xl font-bold text-center">Carbon Footprint Dashboard</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-          {/* Total Emissions Card */}
           <motion.div
             className="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center"
             initial={{ opacity: 0, scale: 0.8 }}
@@ -70,7 +83,6 @@ const Dashboard = () => {
             </motion.div>
           </motion.div>
 
-          {/* Average Emissions Card */}
           <motion.div
             className="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center"
             initial={{ opacity: 0, scale: 0.8 }}
@@ -88,7 +100,6 @@ const Dashboard = () => {
             </motion.div>
           </motion.div>
 
-          {/* Trip Count Card */}
           <motion.div
             className="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center"
             initial={{ opacity: 0, scale: 0.8 }}
@@ -107,7 +118,6 @@ const Dashboard = () => {
           </motion.div>
         </div>
 
-        {/* Emissions Breakdown Pie Chart */}
         <div className="mt-10">
           <h3 className="text-2xl font-semibold text-center">Emissions Breakdown by Transportation Type</h3>
           <ResponsiveContainer width="100%" height={300}>
@@ -130,8 +140,7 @@ const Dashboard = () => {
           </ResponsiveContainer>
         </div>
 
-        {/* Emissions Over Time Bar Chart */}
-        <div className="">
+        <div className="mt-10">
           <h3 className="text-2xl font-semibold text-center">Emissions Over Time</h3>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={emissionsOverTime}>
@@ -144,7 +153,7 @@ const Dashboard = () => {
             </BarChart>
           </ResponsiveContainer>
         </div>
-      
+
         <Gamification badges={badges} streaks={streaks} />
 
         <ShareTrip tripDetails={`Total Emissions: ${totalEmissions} kg CO2, Average Emissions per Trip: ${averageEmissions} kg CO2, Total Trips: ${tripCount}`} />
