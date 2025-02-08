@@ -2,7 +2,8 @@ import pandas as pd
 
 df = pd.read_csv('landmarks_data/landmarks_boston.csv')
 
-df['lat_lon'] = [d.splitlines()[-1].replace('°', '.') for d in df['Location']]
+df['lat_lon'] = [d.splitlines()[-1].replace('°', '.').replace('′', "'")
+                 .replace('″', '') for d in df['Location']]
 df['address'] = [' '.join(d.splitlines()[:-1]) for d in df['Location']]
 df['Date'] = [d.splitlines()[0] for d in df['Date designated']]
 df['name'] = [n.lower() for n in df['Landmark name']]
