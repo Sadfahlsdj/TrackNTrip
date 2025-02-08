@@ -1,12 +1,23 @@
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Map from './pages/Map';
+import Dashboard from './pages/Dashboard';
+import NotFound from './pages/NotFound';
 
-function App() {
-
+const App = () => {
   return (
-    <>
-      <h1 className="font-bold">HackBeanpot</h1>
-    </>
-  )
-}
+    <Router>
+      <div className="min-h-screen w-full">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/map" element={<Map />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+};
 
-export default App
+export default App;
