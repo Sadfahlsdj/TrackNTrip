@@ -1,3 +1,5 @@
+import ast
+import re
 import osmnx as ox
 import networkx as nx
 import pandas as pd
@@ -41,9 +43,36 @@ def get_coordinates(location_str):
         logging.error(f"Geocoding error: {e}")
         return None
 
-# Convert lat_lon to tuples if they're strings (landmarks)
-landmarks['lat_lon'] = landmarks['lat_lon'].apply(eval)
+# DMS to DD conversion function (same as before)
+def dms_to_dd(dms_str):
+    if not isinstance(dms_str, str):
+        return None
+    try:
+        match = re.match(r"([-+]?\d+)[°']?\s*(\d+)[′']?\s*(\d+(?:\.\d+)?)[″\"]?\s*([NSEW])", dms_str, re.IGNORECASE)
+        if match:
+            degrees = int(match.group(1))
+            minutes = int(match.group(2))
+            seconds = float(match.group(3))
+            direction = match.group(4).upper()
 
+            dd = degrees + minutes / 60 + seconds / 3600
+            if direction in ("S", "W"):
+                dd *= -1
+            return dd
+        else:
+            logging.error(f"Invalid DMS format: {dms_str}")
+            return None
+    except (ValueError, AttributeError):
+        logging.error(f"Error converting DMS: {dms_str}")
+        return None
+
+# Convert lat_lon to DD and split into separate columns
+landmarks['latitude'] = landmarks['lat_lon'].apply(lambda x: dms_to_dd(x.split(',')[0].strip()) if isinstance(x, str) else None)
+landmarks['longitude'] = landmarks['lat_lon'].apply(lambda x: dms_to_dd(x.split(',')[1].strip()) if isinstance(x, str) else None)
+
+
+# Drop rows where lat_lon conversion failed
+landmarks.dropna(subset=['lat_lon'], inplace=True) #remove rows with None in lat_lon
 
 # 2. Download and Prepare Street Network
 place = "Boston, Massachusetts, USA"  # Or a more specific area
@@ -69,6 +98,9 @@ def get_nearest_node_osmnx(graph, point):
         return None
 
 # Sample start and end points
+if landmarks.empty:
+    logging.error("The landmarks DataFrame is empty. Check your data loading and preprocessing steps.")
+    exit()  # Or handle it differently (e.g., ask the user for input)
 start_landmark = landmarks.sample(1)
 end_landmark = landmarks.sample(1)
 
