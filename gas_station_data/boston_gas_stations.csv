@@ -1,21 +1,21 @@
 ,name,address,price,latlons
-0,Speedway,"5315 Washington St West Roxbury, MA",$2.82,42.25827795;-71.16142938666795
-1,Emporium Gas,"3875 Washington St Roslindale, MA",$2.85,42.2961322;-71.11848764999999
-2,Mobil,"1465 VFW Pkwy West Roxbury, MA",$2.89,42.26903215168693;-71.1721169153067
-3,Speedway,"710 Gallivan Blvd Dorchester, MA",$2.95,42.2838457;-71.04788149965029
-4,Stop & Shop,"950 American Legion Hwy Roslindale, MA",$2.91,42.275737050000004;-71.1141903566385
-5,JP Oil,"525 Centre St Jamaica Plain, MA",$2.97,42.3173546;-71.11351088193548
-6,Mobil,"1550 Commonwealth Ave Brighton, MA",$2.99,42.346674901325855;-71.14142968723354
-7,Akiki,"1171 Hyde Park Ave Hyde Park, MA",$2.99,42.25888835;-71.1237797332345
-8,Prime Energy,"497 Gallivan Blvd Dorchester, MA",$2.85,42.2823815;-71.05611448013049
-9,Shell,"123 Cambridge St Charlestown, MA",$3.04,42.38249585;-71.07999670752642
-10,Cumberland Farms,"148 Chestnut Hill Ave Brighton, MA",$3.09,42.34220945;-71.15382299445116
-11,Stop n Gas,"970 Washington St Dorchester, MA",$2.99,42.279171;-71.06934531754473
-12,Shell,"219 Cambridge St Allston, MA",$3.09,42.3584868;-71.1262613
-13,Sunoco,"2022 Commonwealth Ave Brighton, MA",$3.09,42.33972265;-71.16016218592233
-14,Speedway,"1783 Centre St West Roxbury, MA",$3.09,42.28760943918301;-71.1519125088443
-15,Speedway,"100 Brighton Ave Boston, MA",$3.09,42.35242355;-71.12989038604113
-16,Speedway,"151 Old Colony Ave South Boston, MA",$3.15,42.33461115;-71.05527004999999
-17,VIP,"120 N Beacon St Brighton, MA",$3.19,42.35488672727273;-71.14449218181818
-18,Speedway,"874 Dorchester Ave Dorchester, MA",$3.15,42.3211639;-71.05656354874046
-19,Stop & Shop,"1100 Massachusetts Ave Dorchester, MA",$3.15,42.3264573;-71.0648216
+0,Speedway,"5315 Washington St West Roxbury, MA",2.82,42.25827795;-71.16142938666795
+1,Emporium Gas,"3875 Washington St Roslindale, MA",2.85,42.2961322;-71.11848764999999
+2,Mobil,"1465 VFW Pkwy West Roxbury, MA",2.89,42.26903215168693;-71.1721169153067
+3,Speedway,"710 Gallivan Blvd Dorchester, MA",2.95,42.2838457;-71.04788149965029
+4,Stop & Shop,"950 American Legion Hwy Roslindale, MA",2.91,42.275737050000004;-71.1141903566385
+5,JP Oil,"525 Centre St Jamaica Plain, MA",2.97,42.3173546;-71.11351088193548
+6,Mobil,"1550 Commonwealth Ave Brighton, MA",2.99,42.346674901325855;-71.14142968723354
+7,Akiki,"1171 Hyde Park Ave Hyde Park, MA",2.99,42.25888835;-71.1237797332345
+8,Prime Energy,"497 Gallivan Blvd Dorchester, MA",2.85,42.2823815;-71.05611448013049
+9,Shell,"123 Cambridge St Charlestown, MA",3.04,42.38249585;-71.07999670752642
+10,Cumberland Farms,"148 Chestnut Hill Ave Brighton, MA",3.09,42.34220945;-71.15382299445116
+11,Stop n Gas,"970 Washington St Dorchester, MA",2.99,42.279171;-71.06934531754473
+12,Shell,"219 Cambridge St Allston, MA",3.09,42.3584868;-71.1262613
+13,Sunoco,"2022 Commonwealth Ave Brighton, MA",3.09,42.33972265;-71.16016218592233
+14,Speedway,"1783 Centre St West Roxbury, MA",3.09,42.28760943918301;-71.1519125088443
+15,Speedway,"100 Brighton Ave Boston, MA",3.09,42.35242355;-71.12989038604113
+16,Speedway,"151 Old Colony Ave South Boston, MA",3.15,42.33461115;-71.05527004999999
+17,VIP,"120 N Beacon St Brighton, MA",3.19,42.35488672727273;-71.14449218181818
+18,Speedway,"874 Dorchester Ave Dorchester, MA",3.15,42.3211639;-71.05656354874046
+19,Stop & Shop,"1100 Massachusetts Ave Dorchester, MA",3.15,42.3264573;-71.0648216
