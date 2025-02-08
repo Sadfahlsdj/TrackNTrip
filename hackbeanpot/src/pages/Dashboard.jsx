@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend } from 'recharts';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const Dashboard = () => {
   const [totalEmissions, setTotalEmissions] = useState(0);
@@ -36,102 +38,106 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="p-4 w-full">
-      <h2 className="text-2xl font-bold text-center">Carbon Footprint Dashboard</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-        {/* Total Emissions Card */}
-        <motion.div
-          className="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h3 className="text-lg font-semibold">Total Emissions (kg CO2)</h3>
+    <>
+      <Header />
+      <div className="p-4 w-full">
+        <h2 className="py-5 text-5xl font-bold text-center">Carbon Footprint Dashboard</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+          {/* Total Emissions Card */}
           <motion.div
-            className="text-4xl font-bold text-green-800"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+            className="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
           >
-            {totalEmissions}
-          </motion.div>
-        </motion.div>
-
-        {/* Average Emissions Card */}
-        <motion.div
-          className="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h3 className="text-lg font-semibold">Average Emissions per Trip (kg CO2)</h3>
-          <motion.div
-            className="text-4xl font-bold text-green-800"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            {averageEmissions}
-          </motion.div>
-        </motion.div>
-
-        {/* Trip Count Card */}
-        <motion.div
-          className="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          <h3 className="text-lg font-semibold">Total Trips</h3>
-          <motion.div
-            className="text-4xl font-bold text-green-800"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            {tripCount}
-          </motion.div>
-        </motion.div>
-      </div>
-
-      {/* Emissions Breakdown Pie Chart */}
-      <div className="mt-8">
-        <h3 className="text-lg font-semibold text-center">Emissions Breakdown by Transportation Type</h3>
-        <ResponsiveContainer width="100%" height={300}>
-          <PieChart>
-            <Pie
-              data={emissionsData}
-              cx="50%"
-              cy="50%"
-              labelLine={false}
-              outerRadius={80}
-              fill="#8884d8"
-              dataKey="value"
+            <h3 className="text-lg font-semibold">Total Emissions (kg CO2)</h3>
+            <motion.div
+              className="text-4xl font-bold text-green-800"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
             >
-              {emissionsData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={['#0088FE', '#00C49F', '#FFBB28', '#FF8042'][index % 4]} />
-              ))}
-            </Pie>
-            <Tooltip />
-          </PieChart>
-        </ResponsiveContainer>
-      </div>
+              {totalEmissions}
+            </motion.div>
+          </motion.div>
 
-      {/* Emissions Over Time Bar Chart */}
-      <div className="mt-8">
-        <h3 className="text-lg font-semibold text-center">Emissions Over Time</h3>
-        <ResponsiveContainer width="100%" height={300}>
-          <BarChart data={emissionsOverTime}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="month" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Bar dataKey="emissions" fill="#82ca9d" />
-          </BarChart>
-        </ResponsiveContainer>
+          {/* Average Emissions Card */}
+          <motion.div
+            className="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h3 className="text-lg font-semibold">Average Emissions per Trip (kg CO2)</h3>
+            <motion.div
+              className="text-4xl font-bold text-green-800"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
+              {averageEmissions}
+            </motion.div>
+          </motion.div>
+
+          {/* Trip Count Card */}
+          <motion.div
+            className="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h3 className="text-lg font-semibold">Total Trips</h3>
+            <motion.div
+              className="text-4xl font-bold text-green-800"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
+              {tripCount}
+            </motion.div>
+          </motion.div>
+        </div>
+
+        {/* Emissions Breakdown Pie Chart */}
+        <div className="mt-10">
+          <h3 className="text-2xl font-semibold text-center">Emissions Breakdown by Transportation Type</h3>
+          <ResponsiveContainer width="100%" height={300}>
+            <PieChart>
+              <Pie
+                data={emissionsData}
+                cx="50%"
+                cy="40%"
+                labelLine={false}
+                outerRadius={80}
+                fill="#8884d8"
+                dataKey="value"
+              >
+                {emissionsData.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={['#0088FE', '#00C49F', '#FFBB28', '#FF8042'][index % 4]} />
+                ))}
+              </Pie>
+              <Tooltip />
+            </PieChart>
+          </ResponsiveContainer>
+        </div>
+
+        {/* Emissions Over Time Bar Chart */}
+        <div className="">
+          <h3 className="text-2xl font-semibold text-center">Emissions Over Time</h3>
+          <ResponsiveContainer width="100%" height={300}>
+            <BarChart data={emissionsOverTime}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="month" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              <Bar dataKey="emissions" fill="#82ca9d" />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

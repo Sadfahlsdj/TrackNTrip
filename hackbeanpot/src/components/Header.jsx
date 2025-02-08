@@ -3,19 +3,19 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <header className="bg-black/20 p-4 shadow-lg fixed w-full">
+    <header className="bg-gray-600 p-4 shadow-lg relative w-full">
       <div className="py-1 max-w-7xl mx-auto flex justify-between items-center">
-        <div className="text-4xl font-bold">Road Trip Planner</div>
+        <Link to="/" className="text-4xl font-bold transition duration-300">Road Trip Planner</Link>
         <nav>
           <ul className="flex space-x-4">
             <li>
-              <Link to="/" className="hover:underline">Home</Link>
+              <Link to="/" className="text-white transition duration-300">Home</Link>
             </li>
             <li>
-              <Link to="/map" className="hover:underline">Map</Link>
+              <Link to="/map" className="text-white transition duration-300">Map</Link>
             </li>
             <li>
-              <Link to="/dashboard" className="hover:underline">Dashboard</Link>
+              <Link to="/dashboard" className="text-white transition duration-300">Dashboard</Link>
             </li>
           </ul>
         </nav>

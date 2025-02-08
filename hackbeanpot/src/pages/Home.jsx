@@ -12,7 +12,7 @@ const Home = () => {
       <main className="flex-grow flex flex-col items-center justify-center pt-16"> {/* Added padding-top to avoid overlap */}
         <h1 className="text-4xl font-bold">Plan Your Road Trip</h1>
         <p className="mt-4 text-lg">Explore historical sites and track your carbon footprint.</p>
-        <Link to="/map" className="mt-6 px-4 py-2 bg-white text-blue-500 rounded hover:bg-gray-200 transition duration-300">
+        <Link to="/map" className="mt-6 px-4 py-2 bg-white text-green rounded hover:bg-gray-100 transition duration-300">
           Start Planning
         </Link>
       </main>
