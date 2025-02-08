@@ -4,11 +4,15 @@ import { motion } from 'framer-motion';
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend } from 'recharts';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import ShareTrip from '../components/ShareTrip';
+import Gamification from '../components/Gamification';
 
 const Dashboard = () => {
   const [totalEmissions, setTotalEmissions] = useState(0);
   const [averageEmissions, setAverageEmissions] = useState(0);
   const [tripCount, setTripCount] = useState(0);
+  const [badges, setBadges] = useState([]);
+  const [streaks, setStreaks] = useState({ current: 0, longest: 0 });
 
   // Sample data for emissions breakdown and emissions over time
   const emissionsData = [
@@ -32,6 +36,11 @@ const Dashboard = () => {
       setTotalEmissions(1200); // Example total emissions
       setAverageEmissions(300); // Example average emissions
       setTripCount(4); // Example trip count
+      setBadges([
+        { name: 'Eco Warrior', description: 'Reduced emissions by 20%', icon: '🌳' },
+        { name: 'Frequent Traveler', description: 'Completed 10 trips', icon: '🚗' },
+      ]);
+      setStreaks({ current: 5, longest: 10 });
     };
 
     fetchData();
@@ -135,6 +144,10 @@ const Dashboard = () => {
             </BarChart>
           </ResponsiveContainer>
         </div>
+      
+        <Gamification badges={badges} streaks={streaks} />
+
+        <ShareTrip tripDetails={`Total Emissions: ${totalEmissions} kg CO2, Average Emissions per Trip: ${averageEmissions} kg CO2, Total Trips: ${tripCount}`} />
       </div>
       <Footer />
     </>
