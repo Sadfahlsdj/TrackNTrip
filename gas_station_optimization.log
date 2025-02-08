@@ -1,3 +1,328 @@
 2025-02-07 23:41:12,083 - INFO - Starting data loading and preprocessing...
 2025-02-07 23:41:12,084 - ERROR - Error loading CSV files: [Errno 2] No such file or directory: 'landmarks_boston_cleaned.csv'. Make sure the files exist in the correct directory.
 2025-02-07 23:43:14,549 - INFO - Starting data loading and preprocessing...
+2025-02-07 23:46:48,364 - INFO - Starting data loading and preprocessing...
+2025-02-07 23:51:43,109 - INFO - Starting data loading and preprocessing...
+2025-02-07 23:54:56,952 - INFO - Starting data loading and preprocessing...
+2025-02-07 23:54:56,979 - ERROR - Error converting lat_lon: Could not convert 42.21'36N 71.03'56W. Skipping.
+2025-02-07 23:54:56,979 - ERROR - Error converting lat_lon: Could not convert 42.21'25N 71.03'59W. Skipping.
+2025-02-07 23:54:56,979 - ERROR - Error converting lat_lon: Could not convert 42.17'52N 71.07'22W. Skipping.
+2025-02-07 23:54:56,979 - ERROR - Error converting lat_lon: Could not convert 42.20'57N 71.05'25W. Skipping.
+2025-02-07 23:54:56,979 - ERROR - Error converting lat_lon: Could not convert 42.21'30N 71.03'58W. Skipping.
+2025-02-07 23:54:56,979 - ERROR - Error converting lat_lon: Could not convert 42.21'30N 71.03'43W. Skipping.
+2025-02-07 23:54:56,979 - ERROR - Error converting lat_lon: Could not convert 42.21'18N 71.03'56W. Skipping.
+2025-02-07 23:54:56,979 - ERROR - Error converting lat_lon: Could not convert 42.19'40N 70.53'24W. Skipping.
+2025-02-07 23:54:56,979 - ERROR - Error converting lat_lon: Could not convert 42.22'26N 71.03'23W. Skipping.
+2025-02-07 23:54:56,979 - ERROR - Error converting lat_lon: Could not convert 42.21'15N 71.04'12W. Skipping.
+2025-02-07 23:54:56,979 - ERROR - Error converting lat_lon: Could not convert 42.20'59N 71.04'39W. Skipping.
+2025-02-07 23:54:56,979 - ERROR - Error converting lat_lon: Could not convert 42.17'29N 71.10'27W. Skipping.
+2025-02-07 23:54:56,979 - ERROR - Error converting lat_lon: Could not convert 42.22'35N 71.03'39W. Skipping.
+2025-02-07 23:54:56,979 - ERROR - Error converting lat_lon: Could not convert 42.22'20N 71.03'16W. Skipping.
+2025-02-07 23:54:56,979 - ERROR - Error converting lat_lon: Could not convert 42.21'08N 71.04'27W. Skipping.
+2025-02-07 23:54:56,979 - ERROR - Error converting lat_lon: Could not convert 42.22'20N 71.03'20W. Skipping.
+2025-02-07 23:54:56,979 - ERROR - Error converting lat_lon: Could not convert 42.21'49N 71.04'04W. Skipping.
+2025-02-07 23:54:56,979 - ERROR - Error converting lat_lon: Could not convert 42.21'36N 71.03'23W. Skipping.
+2025-02-07 23:54:56,979 - ERROR - Error converting lat_lon: Could not convert 42.20'51N 71.05'23W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'40N 71.03'53W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.19'13N 70.55'39W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.19'33N 71.05'36W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'18N 71.04'28W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'29N 71.03'45W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'59N 71.07'38W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'28N 71.04'00W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'29N 71.03'37W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'40N 71.02'07W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'37N 71.02'55W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'49N 71.04'03W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.20'48N 71.05'24W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'30N 71.03'50W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'36N 71.03'55W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.20'29N 71.05'12W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.19'11N 71.05'51W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'29N 71.03'33W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'59N 71.03'17W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'00N 71.04'40W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'25N 71.03'31W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'31N 71.03'27W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'41N 71.03'51W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'26N 71.04'07W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'49N 71.03'13W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'24N 71.04'06W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'37N 71.03'18W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'50N 71.03'13W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.18'42N 71.07'03W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 44.12'38N 69.03'46W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'21N 71.03'45W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'24N 71.04'00W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.19'25N 71.04'19W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'37N 71.03'52W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.20'33N 71.05'09W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'17N 71.03'50W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'00N 71.04'29W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.18'46N 71.03'45W. Skipping.
+2025-02-07 23:54:56,980 - ERROR - Error converting lat_lon: Could not convert 42.21'40N 71.03'25W. Skipping.
+2025-02-07 23:57:16,968 - INFO - Starting data loading and preprocessing...
+2025-02-07 23:57:16,993 - ERROR - Error converting lat_lon: Could not convert 42.21'36N 71.03'56W. Skipping.
+2025-02-07 23:57:16,993 - ERROR - Error converting lat_lon: Could not convert 42.21'25N 71.03'59W. Skipping.
+2025-02-07 23:57:16,993 - ERROR - Error converting lat_lon: Could not convert 42.17'52N 71.07'22W. Skipping.
+2025-02-07 23:57:16,993 - ERROR - Error converting lat_lon: Could not convert 42.20'57N 71.05'25W. Skipping.
+2025-02-07 23:57:16,993 - ERROR - Error converting lat_lon: Could not convert 42.21'30N 71.03'58W. Skipping.
+2025-02-07 23:57:16,993 - ERROR - Error converting lat_lon: Could not convert 42.21'30N 71.03'43W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'18N 71.03'56W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.19'40N 70.53'24W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.22'26N 71.03'23W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'15N 71.04'12W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.20'59N 71.04'39W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.17'29N 71.10'27W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.22'35N 71.03'39W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.22'20N 71.03'16W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'08N 71.04'27W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.22'20N 71.03'20W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'49N 71.04'04W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'36N 71.03'23W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.20'51N 71.05'23W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'40N 71.03'53W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.19'13N 70.55'39W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.19'33N 71.05'36W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'18N 71.04'28W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'29N 71.03'45W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'59N 71.07'38W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'28N 71.04'00W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'29N 71.03'37W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'40N 71.02'07W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'37N 71.02'55W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'49N 71.04'03W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.20'48N 71.05'24W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'30N 71.03'50W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'36N 71.03'55W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.20'29N 71.05'12W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.19'11N 71.05'51W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'29N 71.03'33W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'59N 71.03'17W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'00N 71.04'40W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'25N 71.03'31W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'31N 71.03'27W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'41N 71.03'51W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'26N 71.04'07W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'49N 71.03'13W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'24N 71.04'06W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'37N 71.03'18W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'50N 71.03'13W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.18'42N 71.07'03W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 44.12'38N 69.03'46W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'21N 71.03'45W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'24N 71.04'00W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.19'25N 71.04'19W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'37N 71.03'52W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.20'33N 71.05'09W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'17N 71.03'50W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'00N 71.04'29W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.18'46N 71.03'45W. Skipping.
+2025-02-07 23:57:16,994 - ERROR - Error converting lat_lon: Could not convert 42.21'40N 71.03'25W. Skipping.
+2025-02-07 23:57:25,645 - ERROR - The landmarks DataFrame is empty. Check your data loading and preprocessing steps.
+2025-02-07 23:57:52,457 - INFO - Starting data loading and preprocessing...
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.21'36N 71.03'56W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.21'25N 71.03'59W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.17'52N 71.07'22W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.20'57N 71.05'25W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.21'30N 71.03'58W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.21'30N 71.03'43W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.21'18N 71.03'56W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.19'40N 70.53'24W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.22'26N 71.03'23W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.21'15N 71.04'12W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.20'59N 71.04'39W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.17'29N 71.10'27W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.22'35N 71.03'39W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.22'20N 71.03'16W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.21'08N 71.04'27W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.22'20N 71.03'20W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.21'49N 71.04'04W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.21'36N 71.03'23W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.20'51N 71.05'23W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.21'40N 71.03'53W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.19'13N 70.55'39W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.19'33N 71.05'36W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.21'18N 71.04'28W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.21'29N 71.03'45W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.21'59N 71.07'38W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.21'28N 71.04'00W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.21'29N 71.03'37W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.21'40N 71.02'07W. Skipping.
+2025-02-07 23:57:52,481 - ERROR - Error converting lat_lon: Could not convert 42.21'37N 71.02'55W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 42.21'49N 71.04'03W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 42.20'48N 71.05'24W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 42.21'30N 71.03'50W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 42.21'36N 71.03'55W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 42.20'29N 71.05'12W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 42.19'11N 71.05'51W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 42.21'29N 71.03'33W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 42.21'59N 71.03'17W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 42.21'00N 71.04'40W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 42.21'25N 71.03'31W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 42.21'31N 71.03'27W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 42.21'41N 71.03'51W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 42.21'26N 71.04'07W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 42.21'49N 71.03'13W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 42.21'24N 71.04'06W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 42.21'37N 71.03'18W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 42.21'50N 71.03'13W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 42.18'42N 71.07'03W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 44.12'38N 69.03'46W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 42.21'21N 71.03'45W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 42.21'24N 71.04'00W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 42.19'25N 71.04'19W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 42.21'37N 71.03'52W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 42.20'33N 71.05'09W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 42.21'17N 71.03'50W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 42.21'00N 71.04'29W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 42.18'46N 71.03'45W. Skipping.
+2025-02-07 23:57:52,482 - ERROR - Error converting lat_lon: Could not convert 42.21'40N 71.03'25W. Skipping.
+2025-02-07 23:58:01,500 - ERROR - The landmarks DataFrame is empty. Check your data loading and preprocessing steps.
+2025-02-07 23:59:02,156 - INFO - Starting data loading and preprocessing...
+2025-02-07 23:59:02,182 - ERROR - Error converting lat_lon: Could not convert 42.21'36N 71.03'56W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'25N 71.03'59W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.17'52N 71.07'22W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.20'57N 71.05'25W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'30N 71.03'58W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'30N 71.03'43W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'18N 71.03'56W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.19'40N 70.53'24W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.22'26N 71.03'23W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'15N 71.04'12W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.20'59N 71.04'39W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.17'29N 71.10'27W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.22'35N 71.03'39W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.22'20N 71.03'16W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'08N 71.04'27W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.22'20N 71.03'20W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'49N 71.04'04W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'36N 71.03'23W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.20'51N 71.05'23W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'40N 71.03'53W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.19'13N 70.55'39W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.19'33N 71.05'36W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'18N 71.04'28W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'29N 71.03'45W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'59N 71.07'38W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'28N 71.04'00W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'29N 71.03'37W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'40N 71.02'07W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'37N 71.02'55W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'49N 71.04'03W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.20'48N 71.05'24W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'30N 71.03'50W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'36N 71.03'55W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.20'29N 71.05'12W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.19'11N 71.05'51W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'29N 71.03'33W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'59N 71.03'17W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'00N 71.04'40W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'25N 71.03'31W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'31N 71.03'27W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'41N 71.03'51W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'26N 71.04'07W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'49N 71.03'13W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'24N 71.04'06W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'37N 71.03'18W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'50N 71.03'13W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.18'42N 71.07'03W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 44.12'38N 69.03'46W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'21N 71.03'45W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'24N 71.04'00W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.19'25N 71.04'19W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'37N 71.03'52W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.20'33N 71.05'09W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'17N 71.03'50W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'00N 71.04'29W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.18'46N 71.03'45W. Skipping.
+2025-02-07 23:59:02,183 - ERROR - Error converting lat_lon: Could not convert 42.21'40N 71.03'25W. Skipping.
+2025-02-07 23:59:20,352 - ERROR - The landmarks DataFrame is empty. Check your data loading and preprocessing steps.
+2025-02-08 00:28:42,255 - INFO - Starting data loading and preprocessing...
+2025-02-08 00:28:54,524 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)")': /search?q=710+Gallivan+BlvdDorchester%2C+MA&format=json&limit=1
+2025-02-08 00:28:57,551 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)")': /search?q=525+Centre+Jamaica+Plain%2C+MA&format=json&limit=1
+2025-02-08 00:28:58,738 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)")': /search?q=525+Centre+Jamaica+Plain%2C+MA&format=json&limit=1
+2025-02-08 00:28:59,924 - ERROR - Geocoding error: HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Max retries exceeded with url: /search?q=525+Centre+Jamaica+Plain%2C+MA&format=json&limit=1 (Caused by ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)"))
+2025-02-08 00:29:07,536 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)")': /search?q=2022+Commonwealth+AveBrighton%2C+MA&format=json&limit=1
+2025-02-08 00:29:09,528 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)")': /search?q=1783+Centre+StWest+Roxbury%2C+MA&format=json&limit=1
+2025-02-08 00:29:11,525 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)")': /search?q=100+Brighton+AveBoston%2C+MA&format=json&limit=1
+2025-02-08 00:29:16,531 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)")': /search?q=1100+Massachusetts+Ave.Dorchester%2C+MA&format=json&limit=1
+2025-02-08 00:29:17,712 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)")': /search?q=1100+Massachusetts+Ave.Dorchester%2C+MA&format=json&limit=1
+2025-02-08 00:29:18,898 - ERROR - Geocoding error: HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Max retries exceeded with url: /search?q=1100+Massachusetts+Ave.Dorchester%2C+MA&format=json&limit=1 (Caused by ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)"))
+2025-02-08 00:29:18,903 - INFO - Data loading and preprocessing complete. Time taken: 36.65 seconds
+2025-02-08 00:32:36,307 - INFO - Starting data loading and preprocessing...
+2025-02-08 00:32:47,036 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)")': /search?q=3875+Washington+StRoslindale%2C+MA&format=json&limit=1
+2025-02-08 00:32:50,021 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)")': /search?q=710+Gallivan+BlvdDorchester%2C+MA&format=json&limit=1
+2025-02-08 00:32:53,023 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)")': /search?q=525+Centre+Jamaica+Plain%2C+MA&format=json&limit=1
+2025-02-08 00:32:54,238 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)")': /search?q=525+Centre+Jamaica+Plain%2C+MA&format=json&limit=1
+2025-02-08 00:32:55,416 - ERROR - Geocoding error: HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Max retries exceeded with url: /search?q=525+Centre+Jamaica+Plain%2C+MA&format=json&limit=1 (Caused by ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)"))
+2025-02-08 00:32:56,612 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)")': /search?q=1550+Commonwealth+Ave+Brighton%2C+MA&format=json&limit=1
+2025-02-08 00:32:59,018 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)")': /search?q=497+Gallivan+BlvdDorchester%2C+MA&format=json&limit=1
+2025-02-08 00:33:02,015 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)")': /search?q=148+Chestnut+Hill+AveBrighton%2C+MA&format=json&limit=1
+2025-02-08 00:33:05,159 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)")': /search?q=219+Cambridge+StAllston%2C+MA&format=json&limit=1
+2025-02-08 00:33:08,019 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)")': /search?q=1783+Centre+StWest+Roxbury%2C+MA&format=json&limit=1
+2025-02-08 00:33:10,019 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)")': /search?q=100+Brighton+AveBoston%2C+MA&format=json&limit=1
+2025-02-08 00:33:12,021 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)")': /search?q=151+Old+Colony+AveSouth+Boston%2C+MA&format=json&limit=1
+2025-02-08 00:33:14,052 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)")': /search?q=120+N+Beacon+StBrighton%2C+MA&format=json&limit=1
+2025-02-08 00:33:17,033 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)")': /search?q=1100+Massachusetts+Ave.Dorchester%2C+MA&format=json&limit=1
+2025-02-08 00:33:18,282 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)")': /search?q=1100+Massachusetts+Ave.Dorchester%2C+MA&format=json&limit=1
+2025-02-08 00:33:19,457 - ERROR - Geocoding error: HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Max retries exceeded with url: /search?q=1100+Massachusetts+Ave.Dorchester%2C+MA&format=json&limit=1 (Caused by ReadTimeoutError("HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Read timed out. (read timeout=1)"))
+2025-02-08 00:33:19,461 - INFO - Data loading and preprocessing complete. Time taken: 43.15 seconds
+2025-02-08 00:38:43,363 - INFO - Starting data loading and preprocessing...
+2025-02-08 00:38:43,392 - ERROR - Invalid DMS format: 42.21'36N 71.03'56W
+2025-02-08 00:38:43,392 - ERROR - Invalid DMS format: 42.21'25N 71.03'59W
+2025-02-08 00:38:43,392 - ERROR - Invalid DMS format: 42.17'52N 71.07'22W
+2025-02-08 00:38:43,392 - ERROR - Invalid DMS format: 42.20'57N 71.05'25W
+2025-02-08 00:38:43,392 - ERROR - Invalid DMS format: 42.21'30N 71.03'58W
+2025-02-08 00:38:43,392 - ERROR - Invalid DMS format: 42.21'30N 71.03'43W
+2025-02-08 00:38:43,392 - ERROR - Invalid DMS format: 42.21'18N 71.03'56W
+2025-02-08 00:38:43,392 - ERROR - Invalid DMS format: 42.19'40N 70.53'24W
+2025-02-08 00:38:43,392 - ERROR - Invalid DMS format: 42.22'26N 71.03'23W
+2025-02-08 00:38:43,392 - ERROR - Invalid DMS format: 42.21'15N 71.04'12W
+2025-02-08 00:38:43,392 - ERROR - Invalid DMS format: 42.20'59N 71.04'39W
+2025-02-08 00:38:43,392 - ERROR - Invalid DMS format: 42.17'29N 71.10'27W
+2025-02-08 00:38:43,392 - ERROR - Invalid DMS format: 42.22'35N 71.03'39W
+2025-02-08 00:38:43,392 - ERROR - Invalid DMS format: 42.22'20N 71.03'16W
+2025-02-08 00:38:43,392 - ERROR - Invalid DMS format: 42.21'08N 71.04'27W
+2025-02-08 00:38:43,392 - ERROR - Invalid DMS format: 42.22'20N 71.03'20W
+2025-02-08 00:38:43,392 - ERROR - Invalid DMS format: 42.21'49N 71.04'04W
+2025-02-08 00:38:43,392 - ERROR - Invalid DMS format: 42.21'36N 71.03'23W
+2025-02-08 00:38:43,392 - ERROR - Invalid DMS format: 42.20'51N 71.05'23W
+2025-02-08 00:38:43,392 - ERROR - Invalid DMS format: 42.21'40N 71.03'53W
+2025-02-08 00:38:43,392 - ERROR - Invalid DMS format: 42.19'13N 70.55'39W
+2025-02-08 00:38:43,392 - ERROR - Invalid DMS format: 42.19'33N 71.05'36W
+2025-02-08 00:38:43,392 - ERROR - Invalid DMS format: 42.21'18N 71.04'28W
+2025-02-08 00:38:43,392 - ERROR - Invalid DMS format: 42.21'29N 71.03'45W
+2025-02-08 00:38:43,392 - ERROR - Invalid DMS format: 42.21'59N 71.07'38W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.21'28N 71.04'00W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.21'29N 71.03'37W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.21'40N 71.02'07W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.21'37N 71.02'55W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.21'49N 71.04'03W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.20'48N 71.05'24W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.21'30N 71.03'50W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.21'36N 71.03'55W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.20'29N 71.05'12W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.19'11N 71.05'51W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.21'29N 71.03'33W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.21'59N 71.03'17W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.21'00N 71.04'40W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.21'25N 71.03'31W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.21'31N 71.03'27W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.21'41N 71.03'51W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.21'26N 71.04'07W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.21'49N 71.03'13W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.21'24N 71.04'06W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.21'37N 71.03'18W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.21'50N 71.03'13W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.18'42N 71.07'03W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 44.12'38N 69.03'46W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.21'21N 71.03'45W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.21'24N 71.04'00W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.19'25N 71.04'19W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.21'37N 71.03'52W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.20'33N 71.05'09W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.21'17N 71.03'50W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.21'00N 71.04'29W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.18'46N 71.03'45W
+2025-02-08 00:38:43,393 - ERROR - Invalid DMS format: 42.21'40N 71.03'25W
