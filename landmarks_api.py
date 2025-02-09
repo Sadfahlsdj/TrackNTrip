@@ -7,6 +7,7 @@ import numpy as np
 import networkx as nx
 import os
 import pickle
+import time
 
 app = Flask(__name__)
 # CORS(app)
@@ -96,6 +97,7 @@ def get_coords():
     geolocator = Nominatim(user_agent=user_agent)
 
     l = geolocator.geocode(address)
+    time.sleep(1)
     if l is not None:
         out = {'coords': f'{l.latitude};{l.longitude}'}
         return jsonify(out)
