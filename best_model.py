@@ -55,7 +55,6 @@ except FileNotFoundError as e:
 def latlon_to_tuple(latlon_str):
     if not isinstance(latlon_str, str):
         return None
-
     try:
         lat_str, lon_str = latlon_str.split(';')
         lat = float(lat_str)
@@ -229,8 +228,8 @@ shap_values = explainer.shap_values(X_test)
 shap_values_file = "shap_values.npy"
 np.save(shap_values_file, shap_values)
 
-shap.summary_plot(shap_values, X_test, feature_names=poly_feature_names)
-shap.summary_plot(shap_values, X_test, feature_names=poly_feature_names, plot_type="bar")
+# shap.summary_plot(shap_values, X_test, feature_names=poly_feature_names)
+# shap.summary_plot(shap_values, X_test, feature_names=poly_feature_names, plot_type="bar")
 
 X_poly_all = poly.transform(X) # Use the same polynomial features as training
 predictions = model.predict(X_poly_all)

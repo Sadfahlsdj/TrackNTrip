@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 import pandas as pd
+from run_model import return_best_stations
 
 app = Flask(__name__)
 # CORS(app)
@@ -32,7 +33,7 @@ def get_landmark_by_keyword():
         keyword - keyword to search
 
     :return: name of every landmark which contains the keyword in its description
-    sample usage: http://127.0.0.1:5000/interest?city=boston&keyword=church
+    sample usage: http://127.0.0.1:5000/keyword?city=boston&keyword=church
     """
     keyword = request.args.get('keyword').lower()
     city = request.args.get('city').lower()
@@ -43,3 +44,30 @@ def get_landmark_by_keyword():
     out = df[df['Description'].str.contains(keyword, case=False)]['name']
     return out.to_json(orient='records')
 
+@app.get('/stations')
+def get_stations():
+    """
+    api arguments:
+        city - city name (only supports boston right now)
+        type - either gas or electric
+        start - lat/lon of start of trip
+        end - lat/lon of end of trip
+
+    :return: top 5 gas stations along the path as gotten by model
+    sample usage (ALL ONE LINE):
+    http://127.0.0.1:5000/stations?city=boston&type=gas
+    &start=42.36;71.06555555555555&end=42.358333333333334;71.06194444444444
+    """
+
+    start = request.args.get('start').lower()
+    start_coords = (float(start.split(';')[0]), float(start.split(';')[1]))
+    end = request.args.get('end').lower()
+    end_coords = (float(end.split(';')[0]), float(end.split(';')[1]))
+    city = request.args.get('city').lower()
+    type = request.args.get('type').lower()
+
+    path = f'gas_station_data/{city}_{type}_stations.csv'
+
+    out = return_best_stations(start_coords, end_coords, path)
+    return out.to_json(orient='records')
+    # pass in start lat/lon and end lat/lon to ML function here, and return results
