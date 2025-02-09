@@ -4,6 +4,8 @@ import osmnx as ox
 import numpy as np
 import networkx as nx
 from sklearn.preprocessing import StandardScaler, PolynomialFeatures
+import os
+import pickle
 
 def latlon_to_tuple(latlon_str):
     if not isinstance(latlon_str, str):
@@ -37,9 +39,15 @@ def return_best_stations(start_coords, end_coords, csv_name):
     gas_stations['latlons'] = gas_stations['latlons'].apply(latlon_to_tuple)
     gas_stations.dropna(subset=['latlons'], inplace=True)  # Drop rows with invalid coordinates
 
-    place = "Boston, Massachusetts, USA"
+    place = 'boston' # hardcoded for now
     try:
-        G = ox.graph_from_place(place, network_type="drive")
+        if os.path.exists(f'city_map_pickles/{place}'):
+            with open(f'city_map_pickles/{place}', 'rb') as f:
+                G = pickle.load(f)
+        else:
+            G = ox.graph_from_place(place, network_type="drive")
+            with open(f'city_map_pickles/{place}', 'ab') as f:
+                pickle.dump(G, f)
     except Exception as e:
         exit()
 
