@@ -14,6 +14,7 @@ const Map = ({ initialCity = 'boston' }) => {
   const [searchTriggered, setSearchTriggered] = useState(false);
   const [startLocation, setStartLocation] = useState('');
   const [endLocation, setEndLocation] = useState('');
+  const [vehicleType, setVehicleType] = useState('gas');
   const [tripGenerated, setTripGenerated] = useState(false);
   const [savedTrips, setSavedTrips] = useState([]);
   const [isBrainrotMode, setIsBrainrotMode] = useState(false);
@@ -76,7 +77,8 @@ const Map = ({ initialCity = 'boston' }) => {
     setIsBrainrotMode(!isBrainrotMode);
   };
 
-  const { data: gasStations } = useGasStations(startCoords, endCoords, city, 'gas');
+  const { data: gasStations } = useGasStations(startCoords, endCoords, city, vehicleType);
+
 
   if (error) {
     console.log('Error fetching data: ', error);
@@ -110,6 +112,14 @@ const Map = ({ initialCity = 'boston' }) => {
             value={endLocation}
             onChange={(e) => setEndLocation(e.target.value)}
           />
+          <select
+            className="bg-white border rounded-[1vw] p-2 w-full md:w-1/8"
+            value={vehicleType}
+            onChange={(e) => setVehicleType(e.target.value)}
+          >
+            <option value="gas">Gas Vehicle</option>
+            <option value="electric">Electric Vehicle</option>
+          </select>
           <button
             className="px-4 py-3 bg-gray-500 text-white rounded-[1vw] hover:bg-gray-600 transition duration-300"
             onClick={handleTripGeneration}

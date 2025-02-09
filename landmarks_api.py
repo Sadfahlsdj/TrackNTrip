@@ -173,5 +173,3 @@ def get_distance():
         return({'distance_miles': dist_converted})
     except:
         return('no path found')
-
-
