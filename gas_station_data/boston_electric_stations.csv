@@ -1,20 +1,20 @@
 address,latlons,name,price
-1 Seaport Ln Boston MA,42.349249;-71.041557,ChargePoint Network,0
-75 State St Boston MA,42.358449;-71.055089,Non-Networked,0
-100 Cambridge St Boston MA,42.359957;-71.062137,Non-Networked,0
-610 Albany St Boston MA,42.33593;-71.067034,ChargePoint Network,0
-100 Clarendon St Boston MA,42.347597;-71.073954,ChargePoint Network,0
-121 Nashua St Boston MA,42.36758;-71.065477,Non-Networked,0
-20 Museum Rd Boston MA,42.338347;-71.095968,ChargePoint Network,0
-101 Allstate Road Boston MA,42.3255;-71.0633,Tesla,0
-800 Boylston Street Boston MA,42.34717;-71.081003,Tesla,0
-10 Huntington Ave Boston MA,42.348627;-71.077525,Tesla Destination,0
-100 Stuart St Boston MA,42.350938;-71.065264,Tesla Destination,0
-200 Boylston St Boston MA,42.352135;-71.068673,Tesla Destination,0
-240 Mount Vernon St Boston MA,42.320144;-71.048123,Tesla Destination,0
-26 North St Boston MA,42.360881;-71.056023,Tesla Destination,0
-39 Dalton St Boston MA,42.346346;-71.084324,Tesla Destination,0
-61 Exeter St Boston MA,42.349218;-71.079428,Tesla Destination,0
-776 Boylston St Boston MA,42.348522;-71.082246,Tesla Destination,0
-821 Washington St Boston MA,42.348958;-71.064651,Tesla Destination,0
-90 Tremont St Boston MA,42.357382;-71.060875,Tesla Destination,0
+1 Seaport Ln Boston MA,42.349249;-71.041557,ChargePoint Network,0.52
+75 State St Boston MA,42.358449;-71.055089,Non-Networked,0.40
+100 Cambridge St Boston MA,42.359957;-71.062137,Non-Networked,0.38
+610 Albany St Boston MA,42.33593;-71.067034,ChargePoint Network,0.47
+100 Clarendon St Boston MA,42.347597;-71.073954,ChargePoint Network,0.57
+121 Nashua St Boston MA,42.36758;-71.065477,Non-Networked,0.29
+20 Museum Rd Boston MA,42.338347;-71.095968,ChargePoint Network,0.47
+101 Allstate Road Boston MA,42.3255;-71.0633,Tesla,0.25
+800 Boylston Street Boston MA,42.34717;-71.081003,Tesla,0.36
+10 Huntington Ave Boston MA,42.348627;-71.077525,Tesla Destination,0.48
+100 Stuart St Boston MA,42.350938;-71.065264,Tesla Destination,0.51
+200 Boylston St Boston MA,42.352135;-71.068673,Tesla Destination,0.46
+240 Mount Vernon St Boston MA,42.320144;-71.048123,Tesla Destination,0.42
+26 North St Boston MA,42.360881;-71.056023,Tesla Destination,0.43
+39 Dalton St Boston MA,42.346346;-71.084324,Tesla Destination,0.30
+61 Exeter St Boston MA,42.349218;-71.079428,Tesla Destination,0.33
+776 Boylston St Boston MA,42.348522;-71.082246,Tesla Destination,0.32
+821 Washington St Boston MA,42.348958;-71.064651,Tesla Destination,0.37
+90 Tremont St Boston MA,42.357382;-71.060875,Tesla Destination,0.29
