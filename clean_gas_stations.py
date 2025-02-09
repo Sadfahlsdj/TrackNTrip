@@ -19,4 +19,17 @@ for i, a in enumerate(adds):
     time.sleep(1)
 
 df['latlons'] = latlons
-df.to_csv(path)
+df.to_csv(path, index=False)
+
+path = 'gas_station_data/boston_electric_stations_dirty.csv'
+df = pd.read_csv(path)
+df['latlons'] = [f'{lat};{lon}' for lat, lon in zip(df['latitude'], df['longitude'])]
+df['address'] = [f'{add} {city} {state}' for add, city, state in
+                 zip(df['street_address'], df['city'], df['state'])]
+
+df = df.rename(columns={'ev_network': 'name'})
+
+df['price'] = [0 for _ in range(len(df['ev_pricing']))]
+df_important = df[['address', 'latlons', 'name', 'price']]
+
+df_important.to_csv('gas_station_data/boston_electric_stations.csv', index=False)

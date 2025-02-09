@@ -18,4 +18,4 @@ stations = data.get('fuel_stations', [])
 df = pd.DataFrame(stations)
 df_boston = df[df['city'] == 'Boston']
 
-df_boston.to_csv('gas_station_data/boston_electric_stations.csv', index=False)
+df_boston.to_csv('gas_station_data/boston_electric_stations_dirty.csv', index=False)
