@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Map from './pages/Map';
 import Dashboard from './pages/Dashboard';
 import NotFound from './pages/NotFound';
+// import Login from './pages/Login';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <div className="min-h-screen w-full">
           <Routes>
             <Route path="/" element={<Home />} />
+            {/* <Route path="/login" element={<Login />} /> */}
             <Route path="/map" element={<Map />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="*" element={<NotFound />} />

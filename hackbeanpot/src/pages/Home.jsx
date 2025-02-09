@@ -18,9 +18,9 @@ const Home = () => {
       </div>
       <Header />
       <main className="relative z-10 flex-grow flex flex-col items-center justify-center">
-        <h1 className="text-4xl font-bold text-white">Plan Your Road Trip</h1>
+        <h1 className="text-4xl font-bold text-white">TrackNTrip</h1>
         <p className="mt-4 text-lg text-white">Explore historical sites and track your carbon footprint.</p>
-        <Link to="/map" className="mt-6 px-4 py-2 bg-white text-black rounded hover:bg-gray-100 transition duration-300">
+        <Link to="/map" className="mt-6 px-4 py-2 bg-white text-green rounded hover:bg-gray-100 transition duration-300">
           Start Planning
         </Link>
       </main>

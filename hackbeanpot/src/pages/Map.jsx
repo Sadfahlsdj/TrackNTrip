@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import useLandmark from '../hooks/useLandmark';
+import useCoords from '../hooks/useCoords';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import SavedTrips from '../components/SavedTrips'; // Import the SavedTrips component
+import SavedTrips from '../components/SavedTrips';
 import InteractiveMap from '../components/InteractiveMap';
+import bombIcon from '../assets/angrybird-bomb.png';
 
 const Map = ({ initialCity = 'boston' }) => {
   const [city, setCity] = useState(initialCity);
@@ -12,8 +14,10 @@ const Map = ({ initialCity = 'boston' }) => {
   const [startLocation, setStartLocation] = useState('');
   const [endLocation, setEndLocation] = useState('');
   const [tripGenerated, setTripGenerated] = useState(false);
-  const [savedTrips, setSavedTrips] = useState([]); // State to store saved trips
+  const [savedTrips, setSavedTrips] = useState([]);
+  const [isBrainrotMode, setIsBrainrotMode] = useState(false);
 
+  // Fetch landmarks if searchTriggered is true.
   const { error, data: landmarkData = [] } = useLandmark(
     searchTriggered ? city : '',
     searchTriggered ? landmark : ''
@@ -30,22 +34,48 @@ const Map = ({ initialCity = 'boston' }) => {
     setSearchTriggered(true);
   };
 
-  const handleTripGeneration = () => {
+  // Use the useCoords hook with manual fetching enabled
+  const {
+    data: startCoords,
+    refetch: refetchStartCoords,
+    isFetching: isFetchingStartCoords,
+  } = useCoords(startLocation, { enabled: false });
+
+  const {
+    data: endCoords,
+    refetch: refetchEndCoords,
+    isFetching: isFetchingEndCoords,
+  } = useCoords(endLocation, { enabled: false });
+
+  const handleTripGeneration = async () => {
     if (startLocation.trim() === '' || endLocation.trim() === '') {
       return;
     }
-    // Placeholder for future MongoDB historical route query
-    setTripGenerated(true);
+    try {
+      // Manually trigger the refetch for both start and end coordinates
+      await Promise.all([refetchStartCoords(), refetchEndCoords()]);
+      setTripGenerated(true);
+    } catch (error) {
+      console.error('Error fetching coordinates:', error);
+    }
   };
 
   const handleSaveTrip = () => {
     if (startLocation && endLocation) {
-      const newTrip = { startLocation, endLocation, date: new Date().toLocaleDateString() };
+      const newTrip = {
+        startLocation,
+        endLocation,
+        date: new Date().toLocaleDateString(),
+      };
       setSavedTrips([...savedTrips, newTrip]);
       setStartLocation('');
       setEndLocation('');
       setTripGenerated(false);
     }
+  };
+
+  const toggleBrainrotMode = () => {
+    setIsBrainrotMode(!isBrainrotMode);
   };
 
   if (error) {
@@ -57,8 +87,12 @@ const Map = ({ initialCity = 'boston' }) => {
       <Header />
       <div className="container mx-auto my-5 flex-grow">
         <div className="mb-5 text-center">
-          <h1 className="pt-5 pb-3 text-3xl font-bold">Historical Landmarks & Tours</h1>
-          <p className="text-gray-600">Discover the rich history of your journey.</p>
+          <h1 className="pt-5 pb-3 text-3xl font-bold">
+            Historical Landmarks & Tours
+          </h1>
+          <p className="text-gray-600">
+            Discover the rich history of your journey.
+          </p>
         </div>
 
         <div className="flex flex-col md:flex-row gap-4 mb-5 justify-center">
@@ -77,10 +111,13 @@ const Map = ({ initialCity = 'boston' }) => {
             onChange={(e) => setEndLocation(e.target.value)}
           />
           <button
-            className="text-white py-2 rounded-[1vw]"
+            className="px-4 py-3 bg-gray-500 text-white rounded-[1vw] hover:bg-gray-600 transition duration-300"
             onClick={handleTripGeneration}
+            disabled={isFetchingStartCoords || isFetchingEndCoords}
           >
-            Generate Trip
+            {isFetchingStartCoords || isFetchingEndCoords
+              ? 'Generating...'
+              : 'Generate Trip'}
           </button>
         </div>
 
@@ -100,7 +137,7 @@ const Map = ({ initialCity = 'boston' }) => {
         )}
 
         <div className="flex justify-center">
-          <div className="flex border rounded-[1vw] overflow-hidden w-full md:w-1/2">
+          <div className="flex border bg-white rounded-[1vw] overflow-hidden w-full md:w-1/2">
             <input
               type="text"
               placeholder="Enter landmark name..."
@@ -108,19 +145,35 @@ const Map = ({ initialCity = 'boston' }) => {
               value={landmark}
               onChange={handleLandmarkChange}
             />
-            <button className="bg-blue-500 text-white" onClick={handleSearch}>
+            <button
+              className="px-4 py-3 bg-gray-500 text-white hover:bg-gray-600 transition duration-300"
+              onClick={handleSearch}
+            >
               Search
             </button>
           </div>
+
+          <button className="ml-6" onClick={toggleBrainrotMode}>
+            <img src={bombIcon} alt="Toggle TNT Mode" className="h-9 w-9" />
+          </button>
         </div>
 
-        <InteractiveMap landmarks={landmarkData}/>
+        <InteractiveMap
+          landmarks={landmarkData}
+          isBrainrotMode={isBrainrotMode}
+          startCoords={startCoords}
+          endCoords={endCoords}
+        />
         {console.log(landmarkData)}
         <div id="map"></div>
         {landmarkData.length > 0 && (
           <div className="max-w-lg mx-auto bg-white shadow-md rounded-lg p-5 mb-5">
-            <h2 className="text-xl font-bold mb-2">{landmarkData[0].Date}</h2>
-            <p className="text-gray-700 mb-2">{landmarkData[0].Description}</p>
+            <h2 className="text-xl font-bold mb-2">
+              {landmarkData[0].Date}
+            </h2>
+            <p className="text-gray-700 mb-2">
+              {landmarkData[0].Description}
+            </p>
             <p className="text-gray-600 mt-2">
               📍 Address:&nbsp;
               <a
@@ -135,10 +188,12 @@ const Map = ({ initialCity = 'boston' }) => {
                 {landmarkData[0].address}
               </a>
             </p>
-            <p className="text-gray-600 mt-2">🌍 Coordinates: {landmarkData[0].lat_lon}</p>
+            <p className="text-gray-600 mt-2">
+              🌍 Coordinates: {landmarkData[0].lat_lon}
+            </p>
           </div>
         )}
-        
+
         <SavedTrips trips={savedTrips} />
       </div>
       <Footer />
