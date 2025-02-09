@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 import pandas as pd
 from run_model import return_best_stations
+from geopy import Nominatim
 
 app = Flask(__name__)
 # CORS(app)
@@ -71,3 +72,25 @@ def get_stations():
     out = return_best_stations(start_coords, end_coords, path)
     return out.to_json(orient='records')
     # pass in start lat/lon and end lat/lon to ML function here, and return results
+
+@app.get('/coords')
+def get_coords():
+    """
+    api arguments:
+        address: full address of location; should be formatted as Address City State if possible
+        example: 5315 Washington St West Roxbury, MA
+            (comma is optional)
+            adding city/state is not strictly necessary but greatly increases success rate
+
+    :return: json with one field coords which is in the format "lat;long"
+    """
+    address = request.args.get('address').lower()
+    user_agent = "HBP_2025/1.0 (rotmgmulesix@gmail.com)"
+    geolocator = Nominatim(user_agent=user_agent)
+
+    l = geolocator.geocode(address)
+    if l is not None:
+        out = {'coords': f'{l.latitude};{l.longitude}'}
+        return out
+
+    return 'address not found'
