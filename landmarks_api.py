@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import pandas as pd
 from run_model import return_best_stations
 from geopy import Nominatim
+from geopy.geocoders import OpenCage
 import osmnx as ox
 import numpy as np
 import networkx as nx
@@ -93,11 +94,18 @@ def get_coords():
     example usage: http://127.0.0.1:5000/coords?address=8%20Smith%20Ct%20Beacon%20Hill
     """
     address = request.args.get('address').lower()
-    user_agent = "HBP_2025/1.0 (rotmgmulesix@gmail.com)"
+    user_agent = "HBP_2025/1.0 (wilsar964@gmail.com)"
     geolocator = Nominatim(user_agent=user_agent)
+    try:
+        l = geolocator.geocode(address)
+    except:
+        print(f'nominatim is dead, using opencage')
+        api_key = '25dadb1d0d3d4d57ae50cbc1f1b829d2' # free version on a burner gmail i don't care
 
-    l = geolocator.geocode(address)
-    time.sleep(1)
+        geolocator = OpenCage(api_key=api_key)
+        time.sleep(1)
+        l = geolocator.geocode(address)
+
     if l is not None:
         out = {'coords': f'{l.latitude};{l.longitude}'}
         return jsonify(out)
