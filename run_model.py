@@ -41,6 +41,10 @@ def return_best_stations(start_coords, end_coords, csv_name):
 
     place = 'boston' # hardcoded for now
     try:
+        os.mkdir('city_map_pickles')
+    except:
+        pass
+    try:
         if os.path.exists(f'city_map_pickles/{place}'):
             with open(f'city_map_pickles/{place}', 'rb') as f:
                 G = pickle.load(f)

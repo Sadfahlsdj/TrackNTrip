@@ -136,6 +136,11 @@ def get_distance():
     start_coords = (float(start.split(';')[0]), float(start.split(';')[1]))
     end_coords = (float(end.split(';')[0]), float(end.split(';')[1]))
 
+    try:
+        os.mkdir('city_map_pickles')
+    except:
+        pass
+
     place = location
     try:
         if os.path.exists(f'city_map_pickles/{location}'):
