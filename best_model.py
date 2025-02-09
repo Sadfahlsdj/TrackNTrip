@@ -18,29 +18,7 @@ import joblib
 logging.basicConfig(filename='gas_station_optimization_xgboost.log', level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
-def calculate_composite_score(gas_stations, weights):
-    # ... (same function as in the previous response) ...
-    for col in weights:
-        if col not in gas_stations.columns:
-            raise ValueError(f"Column '{col}' not found in gas_stations DataFrame.")
-        gas_stations[col] = gas_stations[col].fillna(gas_stations[col].mean())
-
-    normalized_data = gas_stations[weights.keys()].copy()
-    for col in weights:
-        min_val = normalized_data[col].min()
-        max_val = normalized_data[col].max()
-        if max_val - min_val != 0:
-            normalized_data[col] = (normalized_data[col] - min_val) / (max_val - min_val)
-        else:
-            normalized_data[col] = 0
-
-    composite_score = np.zeros(len(gas_stations))
-    for col, weight in weights.items():
-        composite_score += normalized_data[col] * weight
-
-    return pd.Series(composite_score, name="composite_score")
-
-# 1. Data Loading and Preprocessing
+# Data loading & preprocessing
 start_time = time.time()
 logging.info("Starting data loading and preprocessing...")
 
@@ -51,10 +29,10 @@ except FileNotFoundError as e:
     logging.error(f"Error loading CSV files: {e}. Make sure the files exist in the correct directory.")
     exit()
 
-# Function to safely convert lat_lon to tuple (split by semicolon)
 def latlon_to_tuple(latlon_str):
     if not isinstance(latlon_str, str):
         return None
+
     try:
         lat_str, lon_str = latlon_str.split(';')
         lat = float(lat_str)
@@ -64,15 +42,13 @@ def latlon_to_tuple(latlon_str):
         logging.error(f"Invalid latlon format: {latlon_str}")
         return None
 
-# Convert lat_lon to tuples (landmarks)
 landmarks['lat_lon'] = landmarks['lat_lon'].apply(latlon_to_tuple)
 landmarks.dropna(subset=['lat_lon'], inplace=True)
 
-# Convert gas station lat/lon to numeric (floats)
 gas_stations['latlons'] = gas_stations['latlons'].apply(latlon_to_tuple)
 gas_stations.dropna(subset=['latlons'], inplace=True)  # Drop rows with invalid coordinates
 
-# 2. Download and Prepare Street Network
+# Download and prepare street network
 place = "Boston, Massachusetts, USA"
 try:
     G = ox.graph_from_place(place, network_type="drive")
@@ -80,14 +56,14 @@ except Exception as e:
     logging.error(f"Error downloading street network: {e}")
     exit()
 
-# Add 'travel_time' attribute
+# Add travel_time attribute
 for u, v, k, data in G.edges(keys=True, data=True):
     length_meters = data['length']
-    speed_kph = 40  # Example speed limit (adjust as needed)
+    speed_kph = 40
     travel_time_seconds = (length_meters / (speed_kph * 1000 / 3600))
     G.edges[u, v, k]['travel_time'] = travel_time_seconds
 
-# 3. Find Nearest Nodes and Calculate Distances/Times
+# Find nearest nodes and calculate distances/times
 def get_nearest_node_osmnx(graph, point):
     if point is None or any(np.isnan(point)):
         return None
@@ -101,9 +77,8 @@ if landmarks.empty:
     logging.error("The landmarks DataFrame is empty. Check your data loading and preprocessing steps.")
     exit()
 
-# Sample start and end points (using indices for consistent sample)
-start_landmark_index = 0  # Example index, change as needed
-end_landmark_index = 1    # Example index, change as needed
+start_landmark_index = 0
+end_landmark_index = 1
 
 start_coords = landmarks['lat_lon'].iloc[start_landmark_index]
 end_coords = landmarks['lat_lon'].iloc[end_landmark_index]
@@ -159,22 +134,40 @@ gas_stations.dropna(inplace=True)
 end_time = time.time()
 logging.info(f"Data loading and preprocessing complete. Time taken: {end_time - start_time:.2f} seconds")
 
-# 4. Feature Engineering and Composite Score Calculation
+def calculate_composite_score(gas_stations, weights):
+    for col in weights:
+        if col not in gas_stations.columns:
+            raise ValueError(f"Column '{col}' not found in gas_stations DataFrame.")
+        gas_stations[col] = gas_stations[col].fillna(gas_stations[col].mean())
+
+    normalized_data = gas_stations[weights.keys()].copy()
+    for col in weights:
+        min_val = normalized_data[col].min()
+        max_val = normalized_data[col].max()
+        if max_val - min_val != 0:
+            normalized_data[col] = (normalized_data[col] - min_val) / (max_val - min_val)
+        else:
+            normalized_data[col] = 0
+
+    composite_score = np.zeros(len(gas_stations))
+    for col, weight in weights.items():
+        composite_score += normalized_data[col] * weight
+
+    return pd.Series(composite_score, name="composite_score")
+
 start_time = time.time()
 logging.info("Starting feature engineering and composite score calculation...")
 
-X = gas_stations[['added_mileage', 'added_time', 'price_per_gallon']]  # Original features
+X = gas_stations[['added_mileage', 'added_time', 'price_per_gallon']]
 
-# --- Calculate Composite Score ---
 weights = {
-    'price_per_gallon': -0.4,  # Adjust weights as needed
-    'added_mileage': -0.3,       # Shorter distance is better
-    'added_time': -0.2          # Shorter time is better
+    'price_per_gallon': -0.4,
+    'added_mileage': -0.3,
+    'added_time': -0.2 
 }
 gas_stations['composite_score'] = calculate_composite_score(gas_stations, weights)
-y = gas_stations['composite_score'] # Target variable now composite score!
+y = gas_stations['composite_score']
 
-# --- Feature Scaling and Polynomial Features (on original X) ---
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 X_scaled = pd.DataFrame(X_scaled, columns=X.columns)
@@ -184,17 +177,14 @@ X_poly = poly.fit_transform(X)
 poly_feature_names = poly.get_feature_names_out(X.columns)
 X_poly = pd.DataFrame(X_poly, columns=poly_feature_names)
 
-# Train-test split (using X_poly)
 X_train, X_test, y_train, y_test = train_test_split(X_poly, y, test_size=0.2, random_state=42)
 
 end_time = time.time()
 logging.info(f"Feature engineering and composite score calculation complete. Time taken: {end_time - start_time:.2f} seconds")
 
-# 5. Hyperparameter Tuning and Model Training (XGBoost)
 start_time = time.time()
 logging.info("Starting hyperparameter tuning and model training with XGBoost...")
 
-# 6. Model Training and Evaluation
 param_grid = {
     'n_estimators': 317,
     'max_depth': 4,
@@ -207,11 +197,12 @@ param_grid = {
 }
 
 model = XGBRegressor(**param_grid, random_state=42)
-model.fit(X_train, y_train) # No need for GridSearchCV
+model.fit(X_train, y_train)
 
 y_pred = model.predict(X_test)
-r2 = r2_score(y_test, y_pred)
 
+# Analysis
+# R-squared score, MSE, RMSE
 r2 = r2_score(y_test, y_pred)
 mse = mean_squared_error(y_test, y_pred)
 rmse = np.sqrt(mse)
@@ -220,7 +211,7 @@ print(f"R-squared score (on test set): {r2}")
 print(f"Mean Squared Error (on test set): {mse}")
 print(f"Root Mean Squared Error (on test set): {rmse}")
 
-# 8. SHAP Analysis
+# SHAP Values
 explainer = shap.TreeExplainer(model)
 shap_values = explainer.shap_values(X_test)
 
@@ -228,20 +219,16 @@ shap_values = explainer.shap_values(X_test)
 shap_values_file = "shap_values.npy"
 np.save(shap_values_file, shap_values)
 
-# shap.summary_plot(shap_values, X_test, feature_names=poly_feature_names)
-# shap.summary_plot(shap_values, X_test, feature_names=poly_feature_names, plot_type="bar")
+shap.summary_plot(shap_values, X_test, feature_names=poly_feature_names)
+shap.summary_plot(shap_values, X_test, feature_names=poly_feature_names, plot_type="bar")
 
-X_poly_all = poly.transform(X) # Use the same polynomial features as training
+X_poly_all = poly.transform(X)
 predictions = model.predict(X_poly_all)
 
-# 2. Create a DataFrame with Predictions and Original Data
-results_df = gas_stations.copy() # Create a copy to avoid SettingWithCopyWarning
+results_df = gas_stations.copy()
 results_df['predicted_composite_score'] = predictions
-
-# 3. Sort by Predicted Score (Descending)
 results_df_sorted = results_df.sort_values(by='predicted_composite_score', ascending=False)
 
-# 4. Print the Top 5
 top_5_results = results_df_sorted.head(5)
 print("Top 5 Gas Stations (Ranked by Predicted Composite Score):")
 print(top_5_results)
