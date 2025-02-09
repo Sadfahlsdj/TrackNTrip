@@ -9,10 +9,8 @@ import networkx as nx
 import os
 import pickle
 import time
-from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
 
 @app.get('/info')
 def get_info():
@@ -170,6 +168,45 @@ def get_distance():
     try:
         dist = nx.shortest_path_length(G, start_node, end_node) # returns a weird unit
         dist_converted = dist * 0.075 # rough conversion based on manual testing
-        return({'distance_miles': dist_converted})
+        return(jsonify({'distance_miles': dist_converted}))
     except:
         return('no path found')
+
+def separate_latlon(start): # helper function to separate our encoding of lat/lon
+    # will go back and standardize functions to use this later
+    return (float(start.split(';')[0]), float(start.split(';')[1]))
+
+@app.get('/landmarks')
+def find_landmarks():
+    """
+    api arguments:
+        start: start lat/lon in the format lat;lon
+        end: end lat/lon in a similar format
+        city: which city to check (only boston for now)
+    :return: all landmarks in a rectangle between the 2
+    example usage: http://127.0.0.1:5000/landmarks?start=0;0&end=100;-100&city=boston
+    """
+    start = request.args.get('start').lower()
+    end = request.args.get('end').lower()
+    city = request.args.get('city').lower()
+
+    start_coords = (float(start.split(';')[0]), float(start.split(';')[1]))
+    end_coords = (float(end.split(';')[0]), float(end.split(';')[1]))
+
+    max_lat, min_lat = max(start_coords[0], end_coords[0]), min(start_coords[0], end_coords[0])
+    max_lon, min_lon = max(start_coords[1], end_coords[1]), min(start_coords[1], end_coords[1])
+
+    df = pd.read_csv(f'landmarks_data/landmarks_{city}_cleaned.csv')
+    out = pd.DataFrame(columns=df.columns)
+
+    for i, row in df.iterrows():
+        coords = separate_latlon(row['lat_lon'])
+        # print(f'{min_lat}, {max_lat}')
+        # print(f'{min_lon}, {max_lon}')
+
+        if (min_lat < coords[0] < max_lat) and (min_lon < coords[1] < max_lon):
+            out.loc[len(out)] = row
+
+    return out.to_json(orient='records')
+
+
