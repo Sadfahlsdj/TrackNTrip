@@ -224,6 +224,11 @@ print(f"Root Mean Squared Error (on test set): {rmse}")
 # 8. SHAP Analysis
 explainer = shap.TreeExplainer(model)
 shap_values = explainer.shap_values(X_test)
+
+# Save SHAP values to a file
+shap_values_file = "shap_values.npy"
+np.save(shap_values_file, shap_values)
+
 shap.summary_plot(shap_values, X_test, feature_names=poly_feature_names)
 shap.summary_plot(shap_values, X_test, feature_names=poly_feature_names, plot_type="bar")
 
