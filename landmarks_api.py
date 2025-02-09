@@ -97,7 +97,7 @@ def get_coords():
 
     l = geolocator.geocode(address)
     if l is not None:
-        out = {'coords': (l.latitude, l.longitude)}
+        out = {'coords': f'{l.latitude};{l.longitude}'}
         return jsonify(out)
 
     return 'address not found'
