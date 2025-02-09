@@ -7,7 +7,7 @@ const useCoords = (address, options = {}) => {
       const response = await fetch(
         `http://127.0.0.1:5000/coords?address=${encodeURIComponent(address)}`
       );
-      console.log(response);
+      // console.log(response);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }

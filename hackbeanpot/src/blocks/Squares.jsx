@@ -59,10 +59,10 @@ const Squares = ({
         0,
         canvas.width / 2,
         canvas.height / 2,
-        Math.sqrt(Math.pow(canvas.width, 2) + Math.pow(canvas.height, 2)) / 2
+        Math.sqrt(Math.pow(canvas.width, 2) + Math.pow(canvas.height, 2)) / 1.7
       );
       gradient.addColorStop(0, 'rgba(0, 0, 0, 0)');
-      gradient.addColorStop(1, '#060606');
+      gradient.addColorStop(1, '#544138');
 
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);

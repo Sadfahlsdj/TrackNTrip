@@ -3,7 +3,7 @@ import React from 'react';
 import { FacebookShareButton, TwitterShareButton, LinkedinShareButton, FacebookIcon, TwitterIcon, LinkedinIcon } from 'react-share';
 
 const ShareTrip = ({ tripDetails }) => {
-  const shareUrl = 'http://yourwebsite.com'; // Replace with your website URL
+  const shareUrl = 'http://trackntrip.com';
   const title = `Check out my trip: ${tripDetails}`;
 
   return (

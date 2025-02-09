@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-600/30 relative bottom-0 text-white p-4 mt-auto">
+    <footer className="bg-brown relative bottom-0 text-white p-4 mt-auto">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <p className="text-sm">© 2025 TrackNTrip. All rights reserved.</p>
         <div className="flex space-x-4">

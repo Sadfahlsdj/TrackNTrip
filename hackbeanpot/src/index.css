@@ -7,7 +7,7 @@
 
   color-scheme: light dark;
   color: #8D9E7C;
-  background-color: #cfcbc2;
+  background-color: #dcd2bd;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,12 +19,20 @@
   background-color: #cfcbc2;
 }
 
+.bg-brown {
+  background-color: #544138;
+}
+
 .bg-greenRT {
   background-color: #8D9E7C;
 }
 
 .text-green {
   color: #8D9E7C;
+}
+
+.text-brown {
+  color: #776259;
 }
 
 a:hover {
