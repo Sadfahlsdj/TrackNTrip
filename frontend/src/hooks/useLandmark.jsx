@@ -11,6 +11,7 @@ const useLandmark = (city, landmark) => {
 
       const text = await response.text();
 
+
       try {
         const parsedData = JSON.parse(text);
         if (typeof parsedData === 'string') {

@@ -27,7 +27,6 @@ const greenBirdIcon = L.icon({
   popupAnchor: [0, -38],
 });
 
-
 const blueIcon = L.icon({
   iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
   iconSize: [25, 41],
@@ -62,25 +61,28 @@ const InteractiveMap = ({
   endCoords,
   gasStations,
 }) => {
-  if (!landmarks || landmarks.length === 0) {
-    return <div className="text-center"></div>;
-  }
-
+  // Parse a lat/lon string "lat;lon" into an array [lat, lon]
   const parseLatLon = (latLonInput) => {
     if (Array.isArray(latLonInput)) {
       return latLonInput;
     } else if (typeof latLonInput === 'string') {
       const parts = latLonInput.split(';').map(Number);
       if (parts.length < 2 || isNaN(parts[0]) || isNaN(parts[1])) return null;
-      return [parts[0], -parts[1]];
+      return parts; // Returns [latitude, longitude] as provided.
     }
     return null;
   };
 
+  // Get valid positions from landmarks
   const validLandmarkPositions = landmarks
-    .map((landmark) => parseLatLon(landmark.lat_lon))
-    .filter((pos) => pos !== null);
+    ? landmarks
+        .map((landmark) => parseLatLon(landmark.lat_lon))
+        .filter((pos) => pos !== null)
+    : [];
 
+  // If there are valid positions, use their average as the map center.
+  // Otherwise, default to Boston ([42.3601, -71.0589]).
+  const defaultCenter = [42.3601, -71.0589];
   const centerPosition =
     validLandmarkPositions.length > 0
       ? [
@@ -89,61 +91,72 @@ const InteractiveMap = ({
           validLandmarkPositions.reduce((sum, pos) => sum + pos[1], 0) /
             validLandmarkPositions.length,
         ]
-      : [0, 0];
+      : defaultCenter;
 
   return (
     <div className="flex justify-center items-center h-screen">
       <MapContainer
         center={centerPosition}
         zoom={13}
-        className="h-[80%] w-[90%] border rounded-[1vw]"
+        style={{ height: '80vh', width: '90vw' }}
+        className="border rounded-[1vw]"
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
-        {landmarks.map((landmark, index) => {
-          const position = parseLatLon(landmark.lat_lon);
-          if (!position) return null;
-          return (
-            <Marker
-              key={`landmark-${index}`}
-              position={position}
-              icon={isBrainrotMode ? redBirdIcon : redIcon}
-            >
-              <Popup>
-                <strong>{landmark.address}</strong>
-                <br />
-                {landmark.Description}
-              </Popup>
-            </Marker>
-          );
-        })}
+        {/* Render landmark markers */}
+        {landmarks &&
+          landmarks.map((landmark, index) => {
+            const position = parseLatLon(landmark.lat_lon);
+            if (!position) return null;
+            return (
+              <Marker
+                key={`landmark-${index}`}
+                position={position}
+                icon={isBrainrotMode ? redBirdIcon : redIcon}
+              >
+                <Popup>
+                  <strong>{landmark.address}</strong>
+                  <br />
+                  {landmark.Description}
+                </Popup>
+              </Marker>
+            );
+          })}
 
+        {/* Render start and end location markers */}
         {startCoords && (
-          <Marker 
-            position={startCoords} 
-            icon={isBrainrotMode ? blueBirdIcon : blueIcon}>
+          <Marker
+            position={startCoords}
+            icon={isBrainrotMode ? blueBirdIcon : blueIcon}
+          >
             <Popup>Start Location</Popup>
           </Marker>
         )}
 
         {endCoords && (
-          <Marker 
-            position={endCoords} 
-            icon={isBrainrotMode ? blueBirdIcon : blueIcon}>
+          <Marker
+            position={endCoords}
+            icon={isBrainrotMode ? blueBirdIcon : blueIcon}
+          >
             <Popup>End Location</Popup>
           </Marker>
         )}
 
+        {/* Render gas station markers if available */}
         {gasStations &&
           gasStations.length > 0 &&
           gasStations.map((station, index) => {
             const position = parseLatLon(station.latlons);
             if (!position) return null;
             return (
-              <Marker key={`gas-${index}`} position={position} icon={isBrainrotMode ? greenBirdIcon : greenIcon}>
+              <Marker
+                key={`gas-${index}`}
+                position={position}
+                icon={isBrainrotMode ? greenBirdIcon : greenIcon}
+              >
                 <Popup>
                   <strong>{station.name || 'Gas Station'}</strong>
                   <br />
@@ -158,4 +171,3 @@ const InteractiveMap = ({
 };
 
 export default InteractiveMap;
-

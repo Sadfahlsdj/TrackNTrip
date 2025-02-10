@@ -9,8 +9,10 @@ import networkx as nx
 import os
 import pickle
 import time
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 @app.get('/info')
 def get_info():
