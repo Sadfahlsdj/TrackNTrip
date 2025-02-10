@@ -4,7 +4,8 @@
 
 **TrackNTrip** was born from a classic road trip dilemma—the driver asking their passenger where the nearest gas station is. Inspired by the challenge of balancing fuel costs, time, and environmental impact, we set out to create a **smarter** way to travel. We combined **eco-conscious travel**, **budget optimization**, and **immersive discovery** into one seamless experience. **TrackNTrip** not only helps travelers make cost-effective and sustainable choices but also transforms every journey into an **engaging and educational** adventure.
 
-**What It Does**
+**What It Does:**
+
 **TrackNTrip** is a web-based application designed to optimize and elevate the road trip experience.
 
 Key features include:
