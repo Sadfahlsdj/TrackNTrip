@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import useLandmark from '../hooks/useLandmark';
+import useNearbyLandmarks from '../hooks/useNearbyLandmarks';
 import useCoords from '../hooks/useCoords';
 import useGasStations from '../hooks/useGasStations';
 import Header from '../components/Header';
@@ -18,11 +19,6 @@ const Map = ({ initialCity = 'boston' }) => {
   const [tripGenerated, setTripGenerated] = useState(false);
   const [savedTrips, setSavedTrips] = useState([]);
   const [isBrainrotMode, setIsBrainrotMode] = useState(false);
-
-  const { error, data: landmarkData = [] } = useLandmark(
-    searchTriggered ? city : '',
-    searchTriggered ? landmark : ''
-  );
 
   const handleLandmarkChange = (event) => {
     setLandmark(event.target.value);
@@ -77,12 +73,8 @@ const Map = ({ initialCity = 'boston' }) => {
     setIsBrainrotMode(!isBrainrotMode);
   };
 
+  const { data: landmarks } = useNearbyLandmarks(startCoords, endCoords, city);
   const { data: gasStations } = useGasStations(startCoords, endCoords, city, vehicleType);
-
-
-  if (error) {
-    console.log('Error fetching data: ', error);
-  }
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -170,7 +162,7 @@ const Map = ({ initialCity = 'boston' }) => {
         </div>
 
         <InteractiveMap
-          landmarks={landmarkData}
+          landmarks={landmarks}
           isBrainrotMode={isBrainrotMode}
           startCoords={startCoords}
           endCoords={endCoords}
@@ -197,30 +189,22 @@ const Map = ({ initialCity = 'boston' }) => {
             </div>
           )}
 
-          {landmarkData.length > 0 && (
+          {landmarks && landmarks.length > 0 && (
             <div className="flex-1 bg-white shadow-md rounded-lg p-5 mb-5">
-              <h2 className="text-xl font-bold mb-4">Landmarks</h2>
-              <p className="font-semibold text-lg mb-2">{landmarkData[0].Date}</p>
-              <p className="text-gray-700 mb-2">
-                {landmarkData[0].Description}
-              </p>
-              <p className="text-gray-600 mt-2">
-                📍 Address:&nbsp;
-                <a
-                  href={`https://www.google.com/maps/place/${landmarkData[0].address.replace(
-                    /\s/g,
-                    '+'
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 transition duration-300"
-                >
-                  {landmarkData[0].address}
-                </a>
-              </p>
-              <p className="text-gray-600 mt-2">
-                🌍 Coordinates: {landmarkData[0].lat_lon}
-              </p>
+              <h2 className="text-xl font-bold mb-4">Historical Landmarks</h2>
+              <ul>
+                {landmarks.map((landmark, index) => (
+                  <li key={`landmark-${index}`} className="mb-4 border-b pb-2">
+                    <h3 className="text-lg font-semibold mb-2">
+                      {index + 1}. {landmark.name}
+                    </h3>
+                    <p className="text-gray-600">Address: {landmark.address}</p>
+                    {/* <p className="text-gray-600">
+                      Price per Gallon: ${station.price_per_gallon.toFixed(2)}
+                    </p> */}
+                  </li>
+                ))}
+              </ul>
             </div>
           )}
         </div>

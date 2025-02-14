@@ -61,7 +61,7 @@ const InteractiveMap = ({
   endCoords,
   gasStations,
 }) => {
-  // Parse a lat/lon string "lat;lon" into an array [lat, lon]
+  // parse "lat;lon" --> [lat, lon]
   const parseLatLon = (latLonInput) => {
     if (Array.isArray(latLonInput)) {
       return latLonInput;
@@ -73,15 +73,14 @@ const InteractiveMap = ({
     return null;
   };
 
-  // Get valid positions from landmarks
   const validLandmarkPositions = landmarks
     ? landmarks
         .map((landmark) => parseLatLon(landmark.lat_lon))
         .filter((pos) => pos !== null)
     : [];
 
-  // If there are valid positions, use their average as the map center.
-  // Otherwise, default to Boston ([42.3601, -71.0589]).
+  // if there are valid positions, use their average as the map center
+  // otherwise, default to Boston ([42.3601, -71.0589])
   const defaultCenter = [42.3601, -71.0589];
   const centerPosition =
     validLandmarkPositions.length > 0
@@ -106,10 +105,9 @@ const InteractiveMap = ({
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
-        {/* Render landmark markers */}
         {landmarks &&
           landmarks.map((landmark, index) => {
-            const position = parseLatLon(landmark.lat_lon);
+            const position = parseLatLon(landmark.latlon);
             if (!position) return null;
             return (
               <Marker
@@ -126,7 +124,6 @@ const InteractiveMap = ({
             );
           })}
 
-        {/* Render start and end location markers */}
         {startCoords && (
           <Marker
             position={startCoords}
@@ -145,7 +142,6 @@ const InteractiveMap = ({
           </Marker>
         )}
 
-        {/* Render gas station markers if available */}
         {gasStations &&
           gasStations.length > 0 &&
           gasStations.map((station, index) => {
@@ -161,6 +157,26 @@ const InteractiveMap = ({
                   <strong>{station.name || 'Gas Station'}</strong>
                   <br />
                   {station.address}
+                </Popup>
+              </Marker>
+            );
+          })}
+
+        {landmarks &&
+          landmarks.length > 0 &&
+          landmarks.map((landmark, index) => {
+            const position = parseLatLon(landmark.lat_lon);
+            if (!position) return null;
+            return (
+              <Marker
+                key={`landmark-${index}`}
+                position={position}
+                icon={isBrainrotMode ? redBirdIcon : redIcon}
+              >
+                <Popup>
+                  <strong>{landmark.name || 'Landmark'}</strong>
+                  <br />
+                  {landmark.address}
                 </Popup>
               </Marker>
             );

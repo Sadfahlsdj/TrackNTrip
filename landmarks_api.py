@@ -207,6 +207,7 @@ def find_landmarks():
         # print(f'{min_lon}, {max_lon}')
 
         if (min_lat < coords[0] < max_lat) and (min_lon < coords[1] < max_lon):
+            row['name'] = row['name'].title()
             out.loc[len(out)] = row
 
     return out.to_json(orient='records')
